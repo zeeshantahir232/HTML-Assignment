@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Tahir Prince</title>
+<style type="text/css">
+/*number inputs*/
+input[type="number"] {
+    border-radius:3px; 
+width:px; height:30px; 
+text-align:center; 
+margin:3px; 
+float:;}
+
+/*select and equals elements*/
+select, .equals {
+border-radius:3px; 
+margin:6px; 
+float:;}
+
+/*output element*/
+output {
+display:block; 
+border:1px solid #333333; 
+border-radius:3px; 
+min-width:100px; height:25px; 
+margin:3px; padding:2px;
+text-align:center; 
+float:left; }
+</style>
+<script type="text/javascript">
+function updateOutput() { 
+	var form = document.getElementById("calc");
+	var out = form.elements["z"];
+	var num1 = parseInt(form.elements["x"].value);
+	var num2 = parseInt(form.elements["y"].value);
+	var operator = parseInt(form.elements["op"].value);
+	switch(operator)
+	{
+		case 0:
+		out.value = num1+num2;
+	  	break;
+		case 1: out.value = num1-num2;
+		break;
+		case 2: out.value = num1*num2;
+		break;
+		case 3: out.value = (num1/num2).toFixed(1);
+		break;
+		default:
+	  	break;
+	}
+}
+
+</script>
+</head>
+<body>
+<form id="calc" oninput="updateOutput()">
+<input name="x" placeholder="Enter First Value" type="number" 0="0" />
+<br>
+<select name="op" onchange="updateOutput()">
+  <option value="">Select</option>
+  <option value="0">+</option>
+  <option value="1">-</option>
+  <option value="2">&times;</option>
+  <option value="3">&divide;</option>
+</select> 
+<br>
+<input name="y" placeholder="Enter Second 
+Value" type="Number" value="" />
+<div class="equals"> </div>
+<br>
+<output name="z"  for="x y">Result</output>
+</body>
+</form> 
+</body>
+</html>
